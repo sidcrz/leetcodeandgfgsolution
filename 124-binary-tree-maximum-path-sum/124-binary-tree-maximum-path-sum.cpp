@@ -22,7 +22,7 @@ class Solution
     int sum(TreeNode *root, int &maxi)
     {
         if (root == NULL) return 0;
-        int ls = max(0, sum(root->left, maxi));
+        int ls = max(0, sum(root->left, maxi)); //zero because we are ignoring negative sum //
         int rs = max(0, sum(root->right, maxi));
         maxi = max(maxi, root->val + ls + rs);
 
