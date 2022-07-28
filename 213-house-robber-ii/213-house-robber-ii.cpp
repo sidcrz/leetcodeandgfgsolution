@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int sex(vector<int>& nums) {
+    int boi(vector<int>& nums) {
         int n=nums.size();
         int prev=nums[0];
         int prev2=0;
@@ -38,6 +38,6 @@ public:
                 temp2.push_back(nums[i]);
             }
         }
-        return max(sex(temp1),sex(temp2));
+        return max(boi(temp1),boi(temp2));
     }
 };
