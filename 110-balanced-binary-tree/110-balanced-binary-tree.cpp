@@ -17,17 +17,15 @@ public:
    
     int check(TreeNode* root)
     {
-        if(root==NULL)
-            return 0;
-        int lh=check(root->left);
-        if(lh==-1){ return -1;}
+       if(root==NULL) return 0;
+       int lh= check(root->left);
+        if(lh==-1) return -1;
         int rh=check(root->right);
-        if(rh==-1){ return -1;}
-        
-    if(abs(lh-rh)>1) 
-    {return -1;
-    }   
-        return max(lh,rh)+1;
+        if(rh==-1) return -1;
+        if(abs(lh-rh)>1)
+            return -1;
+        else
+            return 1+max(lh,rh);  //o(n) time , o(h) stack space//
         
     }
 };
