@@ -11,15 +11,14 @@
  */
 class Solution {
 public:
-    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
-        vector<vector<int>>result;
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) 
+    {
+      vector<vector<int>>result;
         if(root==NULL)
-        {
             return result;
-        }
         queue<TreeNode*>q;
         q.push(root);
-        bool lr=true; //true is for l to r
+        int lr=true;//l to r
         while(!q.empty())
         {
             int size=q.size();
@@ -27,27 +26,27 @@ public:
             for(int i=0;i<size;i++)
             {
                 TreeNode* node=q.front();
-               q.pop();
-                
-                //index where to put value in vector
-                int index=lr?i:(size-i-1);
-                row[index]=node->val;
-                
-                if(node->left)
+                q.pop();
+                if(lr==true)
                 {
+                    row[i]=node->val;
+                }
+                else
+                {
+                    row[size-1-i]=node->val;
+                }
+                if(node->left!=NULL)
                     q.push(node->left);
-                }
-                if(node->right)
-                {
+                if(node->right!=NULL)
                     q.push(node->right);
-                }
-                
-            }
+            } 
             lr=!lr;
             result.push_back(row);
         }
         return result;
-    
         
-    }
+       
+        
+        
+     }
 };
