@@ -13,20 +13,17 @@ class Solution {
 public:
     int kthSmallest(TreeNode* root, int k) {
         vector<int>q;
-        val(root,k,q);
+        smallest(root,q);
         return q[k-1];
-        
-        
     }
-    vector<int> val(TreeNode* root, int k,vector<int>&q)
+    vector<int> smallest(TreeNode* root,vector<int>&q)
     {
-       
         if(root==NULL)
             return q;
-        val(root->left,k,q);
+        smallest(root->left,q);
         q.push_back(root->val);
-        val(root->right,k,q);
+        smallest(root->right,q);
         return q;
-        
     }
+    
 };
