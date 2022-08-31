@@ -10,16 +10,15 @@
  * };
  */
 class Solution {
-    private:
     vector<int>q;
 public:
     vector<int> inorderTraversal(TreeNode* root) {
-        if(root==NULL)
-            return q;
+        if(root==NULL)return q;
         inorderTraversal(root->left);
         q.push_back(root->val);
         inorderTraversal(root->right);
         return q;
+        
         
         
     }
