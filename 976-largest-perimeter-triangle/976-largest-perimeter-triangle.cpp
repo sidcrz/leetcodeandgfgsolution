@@ -4,7 +4,7 @@ public:
          int n=a.size();
         int perimeter=0;
         int sum=0;
-        sort(a.begin(),a.end());
+        sort(a.begin(),a.end());//nlogn
         
         for(int i=0;i<n-2;i++)
         {
