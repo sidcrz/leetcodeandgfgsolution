@@ -1,14 +1,21 @@
 class Solution {
 public:
     int singleNonDuplicate(vector<int>& nums) {
-        int n=nums.size();
-        int sum=0;
-        
-        for(int i=0;i<n;i++ )
+        int low=0;
+        int high=nums.size()-2;
+        while(low<=high)
         {
-            sum^=nums[i];
+            
+            int mid=(low+high)/2;
+            if(nums[mid]==nums[mid^1])
+            {
+                low=mid+1;
+            }
+            else
+                high=mid-1;
         }
-        return sum;
+        return nums[low];
+        //logn, O(1);
         
     }
 };
