@@ -1,7 +1,7 @@
 class Solution {
 public:
     vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
-        queue<pair<int,int>>q;
+        stack<pair<int,int>>q;
         int x=color;
         int y=image[sr][sc];
         int col=image[0].size();
@@ -14,8 +14,8 @@ public:
         
         while(!q.empty())
         {
-            int sm=q.front().first;
-            int mn=q.front().second;
+            int sm=q.top().first;
+            int mn=q.top().second;
             q.pop();
             
             if(sm<0||mn<0||sm>=row||mn>=col)
