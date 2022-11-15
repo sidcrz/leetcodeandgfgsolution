@@ -1,4 +1,4 @@
-// { Driver Code Starts
+//{ Driver Code Starts
 //Initial Template for C++
 
 #include <bits/stdc++.h>
@@ -88,9 +88,7 @@ Node* buildTree(string str)
 }
 
 
- // } Driver Code Ends
-
-
+// } Driver Code Ends
 /*
 struct Node
 {
@@ -106,40 +104,41 @@ class Solution
     //from left to right in Binary Tree.
     vector<int> topView(Node *root)
     {
-         vector<int> ans;
-        map<int,int> m;
-        queue<pair<Node*,int>> q;
-        q.push({root,0});
-        while(q.size()>0)
-        {
-            auto it=q.front();
-            q.pop();
-            if(m.find(it.second)==m.end())
-            {
-                m[it.second]=it.first->data;
-            }
-            if(it.first->left!=NULL)
-            {
-                q.push({it.first->left,it.second-1});
-            }
-            if(it.first->right!=NULL)
-            {
-                q.push({it.first->right,it.second+1});
-            }
-            
-        }
-        for(auto &x:m)
-            {
-                ans.push_back(x.second);
-            }
-        return ans;
+    vector<int>ans;
+    map<int,int>mpp;
+    if(root==NULL )
+    return ans;
+    queue<pair<Node*,int>>q;
+    q.push({root,0});
+    while(!q.empty())
+    {
+        auto it=q.front();
+        q.pop();
+        Node * node=it.first;
+        int line=it.second;
+        if(mpp.find(line)==mpp.end())
+         mpp[line]=node->data;
+         
+         if(node->left!=NULL)
+         q.push({node->left,line-1});
+         if(node->right!=NULL)
+         q.push({node->right,line+1});
+         
+        
+    }
+    for(auto it:mpp)
+    {
+        ans.push_back(it.second);
+    }
+    
+    return ans;
     }
 
 };
 
 
 
-// { Driver Code Starts.
+//{ Driver Code Starts.
 
 int main() {
     int tc;
@@ -156,4 +155,5 @@ int main() {
         cout<<endl;
     }
     return 0;
-}  // } Driver Code Ends
+}
+// } Driver Code Ends
