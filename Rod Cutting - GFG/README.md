@@ -1,7 +1,6 @@
 # Rod Cutting
-## Easy 
-<div class="problem-statement">
-                <p></p><p><span style="font-size:18px">Given a rod of length <strong>N</strong> inches and an array of prices,&nbsp;<strong>price[]</strong> that contains prices of all pieces of size smaller than <strong>N</strong>. Determine the maximum value obtainable by cutting up the rod and selling the pieces.</span></p>
+## Medium
+<div class="problems_problem_content__Xm_eO"><p><span style="font-size:18px">Given a rod of length <strong>N</strong> inches and an array of prices,&nbsp;<strong>price[]</strong>. <strong>price<sub>i</sub></strong>&nbsp;denotes the value of a piece of length <strong>i</strong>.&nbsp;Determine the maximum value obtainable by cutting up the rod and selling the pieces.</span></p>
 
 <p>&nbsp;</p>
 
@@ -41,5 +40,4 @@ You don't need to read input or print anything. Your task is to complete the fun
 <span style="font-size:18px"><strong>Constraints:</strong><br>
 1 ≤ N ≤ 1000<br>
 1 ≤ A<sub>i</sub> ≤ 10<sup>5</sup></span></p>
- <p></p>
-            </div>
+</div>
