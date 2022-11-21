@@ -1,30 +1,30 @@
-class Solution {
-public:
-    bool isValid(string s) {
-       stack<char>st;
-        for(auto it:s)
+class Solution
+{
+    public:
+        bool isValid(string s)
         {
-            if(it=='(' or it=='{' or it=='[')
+            stack<char> st;
+            for (auto it: s)
             {
-                st.push(it);
+                if (it == '('
+                    or it == '{'
+                    or it == '[')
+                {
+                    st.push(it);
+                }
+                else
+                {
+                    if (st.size() == 0) return false;
+                    char ch = st.top();
+                    st.pop();
+                    if ((it == ')'
+                            and ch == '(') or(it == ']'
+                            and ch == '[') or(it == '}'
+                            and ch == '{')) continue;
+                    else return false;
+                }
             }
-            else
-            {
-                if(st.size()==0) return false;
-                char ch=st.top();
-                st.pop();
-                if((it == ')' and ch == '(') or  (it == ']' and ch == '[') or (it == '}' and ch == '{')) continue;
-                else return false;
-            }
-        }
-            
+
             return st.empty();
-            
-            
-            
-            
-            
-            
         }
-    
 };
