@@ -25,6 +25,6 @@ public:
         int left=binary(root->left,dl);
         int right=binary(root->right,dl);
         dl=max(dl,left+right);
-        return 1+max(left,right);
+        return 1+ max(left,right);
     }
 };
